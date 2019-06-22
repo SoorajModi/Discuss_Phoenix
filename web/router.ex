@@ -1,3 +1,6 @@
+# Purpose of this file is to look at incoming requests, look at URL they are trying to access, then send them to
+# a particular function in a particular controller
+
 defmodule Discuss.Router do
   use Discuss.Web, :router
 
@@ -17,6 +20,7 @@ defmodule Discuss.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/topics/new", TopicController, :new
   end
 
   # Other scopes may use custom stacks.
