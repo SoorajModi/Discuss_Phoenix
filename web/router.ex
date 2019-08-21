@@ -19,8 +19,7 @@ defmodule Discuss.Router do
   scope "/", Discuss do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
-
+    get "/", TopicController, :index
     get "/topics/new", TopicController, :new
     post "/topics", TopicController, :create
   end
